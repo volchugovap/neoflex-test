@@ -1,15 +1,12 @@
 import { type FC } from 'react'
 import { Footer, Header } from '../components'
+import { Outlet } from 'react-router'
 
-interface IProps {
-	children: React.ReactNode
-}
-
-export const Layout: FC<IProps> = ({ children }) => {
+export const MainLayout: FC = () => {
 	return (
 		<>
 			<Header />
-			{children}
+			<Outlet />
 			<Footer />
 		</>
 	)

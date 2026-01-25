@@ -1,43 +1,49 @@
-import type { IHeadPhoneData } from './types'
+import type { IHeadPhoneData } from './store/types'
 
 export const headPhones: IHeadPhoneData[] = [
 	{
 		name: 'Наушники',
 		data: [
 			{
-				img: './assets/S852.png',
+				id: 2342342,
+				img: '/naushniki1.svg',
 				title: 'Apple BYZ S852I',
 				price: 2927,
 				rate: 4.7,
 			},
 			{
-				img: './assets/earpods1.png',
+				id: 94760,
+				img: '/naushniki2.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 
 			{
-				img: './assets/earpods2.png',
+				id: 87134,
+				img: '/naushniki3.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 			{
-				img: './assets/S852.png',
+				id: 112340,
+				img: '/naushniki1.svg',
 				title: 'Apple BYZ S852I',
 				price: 2927,
 				rate: 4.7,
 			},
 			{
-				img: './assets/earpods1.png',
+				id: 98034,
+				img: '/naushniki2.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 
 			{
-				img: './assets/earpods2.png',
+				id: 2342,
+				img: '/naushniki3.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
@@ -48,39 +54,45 @@ export const headPhones: IHeadPhoneData[] = [
 		name: 'Беспроводные наушники',
 		data: [
 			{
-				img: './assets/S852.png',
+				id: 23,
+				img: '/naushniki4.svg',
 				title: 'Apple BYZ S852I',
 				price: 2927,
 				rate: 4.7,
 			},
 			{
-				img: './assets/earpods1.png',
+				id: 9871234,
+				img: '/naushniki5.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 
 			{
-				img: './assets/earpods2.png',
+				id: 977987912,
+				img: '/naushniki6.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 			{
-				img: './assets/S852.png',
+				id: 77777777,
+				img: '/naushniki4.svg',
 				title: 'Apple BYZ S852I',
 				price: 2927,
 				rate: 4.7,
 			},
 			{
-				img: './assets/earpods1.png',
+				id: 2222222,
+				img: '/naushniki5.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,
 			},
 
 			{
-				img: './assets/earpods2.png',
+				id: 666666666,
+				img: '/naushniki6.svg',
 				title: 'Apple EarPods',
 				price: 2327,
 				rate: 4.5,

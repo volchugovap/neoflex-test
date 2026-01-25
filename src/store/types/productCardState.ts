@@ -1,4 +1,5 @@
-export interface ICardData {
+export interface ProductCardState {
+	id: number
 	img: string
 	title: string
 	price: number
