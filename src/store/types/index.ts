@@ -1,12 +1,5 @@
-export type {
-	CartAction,
-	cartInitialState,
-	CartState,
-	ProductType,
-} from './cartTypes'
+export type { CartAction, CartState } from "./cartTypes";
 
-export type { RootAction, RootState } from './rootTypes'
+export type { FavoritesAction, FavoritesState } from "./favoritesTypes";
 
-export type { ProductCardState } from './productCardState'
-
-export type { HeadPhoneState } from './headPhoneState'
+export type { RootAction, RootState } from "./rootTypes";

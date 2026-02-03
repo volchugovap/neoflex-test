@@ -1,15 +1,23 @@
-import { type FC } from 'react'
-import { CardCart } from '../../components'
-import { useStore } from '../../store/context'
+import { type FC } from "react";
+import { CardCart } from "../../components";
+import { useSelector } from "../../store";
+import { FinishPrice } from "../../components/finish-price/FinishPrice";
 
 export const Cart: FC = () => {
-	const { state } = useStore()
+  const cart = useSelector((state) => state.cart);
 
-	return (
-		<div>
-			{state.cart.map(({ id, price, title, img }) => (
-				<CardCart id={id} img={img} price={price} title={title} key={id} />
-			))}
-		</div>
-	)
-}
+  return (
+    <main>
+      <p className="mb-3.5 text-[20px] font-semibold">Корзина</p>
+      <div className="flex gap-32">
+        <div className="flex flex-1 flex-col gap-9">
+          {cart.map(({ id }) => (
+            <CardCart id={id} key={id} />
+          ))}
+        </div>
+
+        <FinishPrice />
+      </div>
+    </main>
+  );
+};

@@ -23,17 +23,15 @@ export function cartReducer(
 
     case "cart/removeItem": {
       return state.map((el) =>
-        el.id === payload && el.count > 0 ? { ...el, count: el.count - 1 } : el,
+        el.id === payload.id && el.count > 0
+          ? { ...el, count: el.count - 1 }
+          : el,
       );
     }
 
     case "cart/deleteItemCard": {
-      return state.filter((el) => el.id !== payload);
+      return state.filter(({ id }) => id !== payload.id);
     }
-
-    /* case 'cart/totalPrice': {
-			return state.reduce((sum, item) => sum + item.price * item.count, 0)
-		} */
 
     default: {
       return state;

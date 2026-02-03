@@ -1,10 +1,18 @@
-import { type FC } from 'react'
-import { Link } from 'react-router'
+import { type FC } from "react";
+import { Logo } from "../logo/Logo";
+import { CartLink } from "./cart-link/CartLink";
+import { FavoritesLink } from "./favorites-link/FavoritesLink";
 
 export const Header: FC = () => {
-	return (
-		<header>
-			<Link to='/cart'>Korzina</Link>
-		</header>
-	)
-}
+  return (
+    <header className="flex justify-between py-3.75">
+      <Logo />
+
+      <nav className="flex gap-6">
+        <FavoritesLink />
+
+        <CartLink />
+      </nav>
+    </header>
+  );
+};

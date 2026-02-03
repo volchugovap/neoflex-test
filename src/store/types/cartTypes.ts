@@ -1,16 +1,13 @@
-import type { ProductCardState } from './productCardState'
+import type { ProductCardType } from "../../data";
 
-export type ProductType = Omit<ProductCardState, 'rate' | 'oldPrice'>
-type CountType = {
-	count: number
-}
+type CartProductState = Pick<ProductCardType, "id">;
+type CartCountState = {
+  count: number;
+};
 
-export type CartState = ProductType & CountType
-
-export type cartInitialState = []
+export type CartState = CartProductState & CartCountState;
 
 export type CartAction =
-	| { type: 'cart/addItem'; payload: ProductType }
-	| { type: 'cart/removeItem'; payload: number }
-	| { type: 'cart/deleteItemCard'; payload: number }
-	| { type: 'cart/totalPrice'; payload: null }
+  | { type: "cart/addItem"; payload: CartProductState }
+  | { type: "cart/removeItem"; payload: CartProductState }
+  | { type: "cart/deleteItemCard"; payload: CartProductState };

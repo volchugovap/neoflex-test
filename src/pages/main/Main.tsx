@@ -1,28 +1,20 @@
-import { type FC } from 'react'
-import { headPhones } from '../../data'
-import { CardMain } from '../../components'
+import { type FC } from "react";
+import { getSections } from "../../data";
+import { CardMain } from "../../components";
 
 export const Main: FC = () => {
-	return (
-		<div>
-			{headPhones.map(el => (
-				<>
-					<h2>{el.name}</h2>
-					<div>
-						{el.data.map(({ id, img, price, rate, title, oldPrice }) => (
-							<CardMain
-								id={id}
-								img={img}
-								price={price}
-								rate={rate}
-								title={title}
-								oldPrice={oldPrice}
-								key={id}
-							/>
-						))}
-					</div>
-				</>
-			))}
-		</div>
-	)
-}
+  return (
+    <main>
+      {getSections().map(({ name, data }) => (
+        <section>
+          <h1 className="text-gray mb-6 text-[20px] font-semibold">{name}</h1>
+          <div className="mb-7 flex flex-wrap items-center justify-center gap-9">
+            {data.map(({ id }) => (
+              <CardMain id={id} key={id} />
+            ))}
+          </div>
+        </section>
+      ))}
+    </main>
+  );
+};
