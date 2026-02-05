@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Social } from "./social/Social";
 import { Logo } from "../logo/Logo";
 import { LangString } from "./lang-string/LangString";
+import { useTranslation } from "react-i18next";
 
 interface IRow {
   name: string;
@@ -21,6 +22,8 @@ const cols: ColsType = [
 ];
 
 export const Footer: FC = () => {
+  const { t } = useTranslation();
+
   const minCountRowsInColumns = useMemo(() => {
     let count = cols[0].length;
 
@@ -37,12 +40,12 @@ export const Footer: FC = () => {
     <footer className="mt-9 flex items-start justify-between rounded-t-4xl bg-white p-7.5">
       <Logo />
 
-      {cols.map((column) => (
-        <ul className="flex h-full flex-col justify-between">
-          {column.map(({ name, linkTo }) => (
-            <li>
+      {cols.map((column, ind) => (
+        <ul key={ind} className="flex h-full flex-col justify-between">
+          {column.map(({ name, linkTo }, ind) => (
+            <li key={ind}>
               <Link to={linkTo} className="text-[17px] font-normal">
-                {name}
+                {t(name)}
               </Link>
             </li>
           ))}

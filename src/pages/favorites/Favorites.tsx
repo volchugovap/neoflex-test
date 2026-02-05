@@ -1,13 +1,16 @@
 import { type FC } from "react";
 import { useSelector } from "../../store";
 import { CardMain } from "../../components";
+import { useTranslation } from "react-i18next";
 
 export const Favorites: FC = () => {
   const favorites = useSelector((state) => state.favorites);
 
+  const { t } = useTranslation();
+
   return (
     <main>
-      <p className="mb-3.5 text-[20px] font-semibold">Избранное</p>
+      <p className="mb-3.5 text-[20px] font-semibold">{t("Избранное")}</p>
       <div className="w-4xs mb-7 flex flex-wrap gap-9">
         {favorites.map(({ id }) => (
           <CardMain id={id} key={id} />

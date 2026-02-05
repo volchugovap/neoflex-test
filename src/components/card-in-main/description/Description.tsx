@@ -4,12 +4,15 @@ import { TextButton } from "../../../shared/ui";
 import { Rate } from "./rate/Rate";
 import { Price } from "./price/Price";
 import { getItemById } from "../../../data";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   id: number;
 }
 
 export const Description: FC<IProps> = ({ id }) => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
 
   const { price, rate, title, oldPrice } = getItemById(id);
@@ -34,7 +37,7 @@ export const Description: FC<IProps> = ({ id }) => {
           className="hover:text-gray text-[17px] font-semibold text-black transition-colors duration-350 ease-in-out"
           onClick={() => addToCart(id)}
         >
-          Купить
+          {t("Купить")}
         </TextButton>
       </div>
     </div>

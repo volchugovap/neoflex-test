@@ -1,7 +1,16 @@
 import { useState, type FC } from "react";
 import { TextButton } from "../../../shared/ui";
+import { changeLanguage } from "../../../helpers";
 
-const lang = ["Рус", "Eng"];
+interface ILang {
+  name: string;
+  type: string;
+}
+
+const lang: ILang[] = [
+  { name: "Рус", type: "ru" },
+  { name: "Eng", type: "en" },
+];
 
 export const LangString: FC = () => {
   const [active, setActive] = useState<number>(0);
@@ -14,12 +23,16 @@ export const LangString: FC = () => {
     <div className="flex gap-4">
       <img src="/lang.svg" alt="lang" />
 
-      {lang.map((el, ind) => (
+      {lang.map(({ name, type }, ind) => (
         <TextButton
+          key={ind}
           className={`${active === ind ? "text-darkOrange" : "text-black"} text-15 font-bold`}
-          onClick={() => changeActive(ind)}
+          onClick={() => {
+            changeLanguage(type);
+            changeActive(ind);
+          }}
         >
-          {el}
+          {name}
         </TextButton>
       ))}
     </div>
